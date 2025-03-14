@@ -7,34 +7,15 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="{{ asset('images/logo.png') }}" alt="CooperEduca">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <div class="nav-buttons">
-                <button class="btn">Entrar</button>
-                <button class="btn btn-outline">Criar Conta</button>
-            </div>
-        </nav>
-    </header>
+    <!-- Inclui o cabeçalho -->
+    @include('layouts.partials.header')
 
+    <!-- Conteúdo principal -->
     <main>
-        <section>
-            <h1>Bem-vindo ao CooperEduca</h1>
-            <p>Educação financeira ao seu alcance!</p>
-        </section>
+        @yield('content')
     </main>
 
-    <footer>
-        <p>&copy; 2025 CooperEduca. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Inclui o rodapé -->
+    @include('layouts.partials.footer')
 </body>
-
 </html>

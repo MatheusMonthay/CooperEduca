@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+// Rota para listar todos os cursos
+Route::get('/cursos', [CursoController::class, 'index'])->name('cursos.index');
+
+// Rota para exibir os módulos de um curso específico
+Route::get('/cursos/{curso_id}/{modulo_id?}', [CursoController::class, 'show'])->name('cursos.show');
