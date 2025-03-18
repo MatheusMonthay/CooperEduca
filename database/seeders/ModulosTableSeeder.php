@@ -163,5 +163,170 @@ class ModulosTableSeeder extends Seeder
             'ordem' => 5,
         ]);
 
+        // CURSO Investimentos em Renda Variável ID:04
+        // Módulo 0: Introdução
+        Modulo::create([
+            'curso_id' => 4,
+            'titulo' => 'Introdução',
+            'conteudo' => "## Introdução\n\nEste curso foi desenvolvido para ajudar você a entender os principais investimentos em renda variável, como ações, ETFs e fundos imobiliários, além de aprender conceitos básicos de análise de investimentos e como montar uma carteira diversificada. Vamos abordar tudo de forma clara e prática, para que você possa investir com confiança.",
+            'ordem' => 1,
+        ]);
+
+        // Módulo 1: Ações, ETFs e Fundos Imobiliários
+        Modulo::create([
+            'curso_id' => 4,
+            'titulo' => 'Ações, ETFs e Fundos Imobiliários',
+            'conteudo' => "## Ações, ETFs e Fundos Imobiliários\n\n### Ações\n\n- **O que são:** Parte do capital de uma empresa.\n- **Vantagens:** Potencial de retorno elevado e dividendos.\n- **Riscos:** Volatilidade do mercado e possibilidade de perdas.\n\n### ETFs (Exchange Traded Funds)\n\n- **O que são:** Fundos que replicam índices do mercado.\n- **Vantagens:** Diversificação automática e custos baixos.\n\n### Fundos Imobiliários (FIIs)\n\n- **O que são:** Fundos que investem em imóveis comerciais.\n- **Vantagens:** Renda passiva através dos aluguéis.",
+            'ordem' => 2,
+        ]);
+
+        // Módulo 2: Análise Fundamentalista e Técnica (Básico)
+        Modulo::create([
+            'curso_id' => 4,
+            'titulo' => 'Análise Fundamentalista e Técnica (Básico)',
+            'conteudo' => "## Análise Fundamentalista e Técnica (Básico)\n\n### Análise Fundamentalista\n\n- **O que é:** Avaliação de uma empresa com base em seus fundamentos.\n- **Indicadores financeiros:** P/L, ROE, Dívida Líquida/EBITDA.\n\n### Análise Técnica\n\n- **O que é:** Estudo dos gráficos e indicadores para prever movimentos futuros.\n- **Gráficos de candlestick:** Mostram a variação de preço.\n- **Médias móveis:** Indicam tendências de alta ou baixa.\n\n### Quando Usar Cada Tipo\n\n- **Fundamentalista:** Para investimentos de longo prazo.\n- **Técnica:** Para operações de curto prazo.",
+            'ordem' => 3,
+        ]);
+
+        // Módulo 3: Como Montar uma Carteira de Investimentos
+        Modulo::create([
+            'curso_id' => 4,
+            'titulo' => 'Como Montar uma Carteira de Investimentos',
+            'conteudo' => "## Como Montar uma Carteira de Investimentos\n\n### Como Escolher Ativos\n\n- **Defina seus objetivos:** Metas de curto, médio ou longo prazo.\n- **Escolha empresas sólidas:** Para ações, prefira empresas com bons fundamentos.\n- **Diversifique:** Inclua diferentes setores e tipos de ativos.\n\n### Acompanhamento e Ajustes\n\n- **Acompanhe regularmente:** Verifique o desempenho dos ativos.\n- **Rebalanceie:** Ajuste a carteira para manter a diversificação.\n\n### Exemplo Prático\n\n- **Carteira diversificada:** Ações de tecnologia, varejo, finanças e FIIs.",
+            'ordem' => 4,
+        ]);
+
+        // Módulo 4: Conclusão do Curso
+        Modulo::create([
+            'curso_id' => 4,
+            'titulo' => 'Conclusão do Curso',
+            'conteudo' => "## Conclusão do Curso\n\nAo final deste curso, você terá uma base sólida para investir em renda variável, entendendo os principais tipos de investimentos, como analisar empresas e mercados, e como montar e gerenciar uma carteira diversificada. Lembre-se de que a renda variável exige paciência, estudo e disciplina, mas pode oferecer retornos significativos a longo prazo.\n\n### Próximos Passos\n\n- Comece com investimentos simples, como ETFs ou FIIs, para ganhar experiência.\n- Estude empresas e setores antes de comprar ações.\n- Acompanhe sua carteira regularmente e ajuste conforme seus objetivos e o mercado.\n\nCom planejamento e conhecimento, você pode aproveitar as oportunidades da renda variável e construir um patrimônio sólido. Boa sorte nos investimentos! 🚀",
+            'ordem' => 5,
+        ]);
+
+        // CURSO Investimentos em Renda Fixa ID:05
+        // Módulo 0: Introdução
+        Modulo::create([
+            'curso_id' => 5,
+            'titulo' => 'Introdução',
+            'conteudo' => "## Introdução\n\nEste curso foi criado para ajudar você a entender os principais investimentos em renda fixa, como calcular sua rentabilidade e riscos, e como diversificar sua carteira para reduzir riscos e maximizar retornos. Vamos abordar tudo de forma clara e prática, para que você possa investir com confiança.",
+            'ordem' => 1,
+        ]);
+
+        // Módulo 1: Tesouro Direto, CDB, LCI, LCA e Outros
+        Modulo::create([
+            'curso_id' => 5,
+            'titulo' => 'Tesouro Direto, CDB, LCI, LCA e Outros',
+            'conteudo' => "## Tesouro Direto, CDB, LCI, LCA e Outros\n\nA renda fixa é uma categoria de investimentos em que você empresta dinheiro a uma instituição (como o governo ou um banco) e recebe de volta com juros. É considerada uma opção mais segura e previsível, ideal para quem está começando a investir.\n\n### Tesouro Direto\n\n- **Tesouro Selic:** Vinculado à taxa básica de juros.\n- **Tesouro IPCA+:** Protege contra a inflação.\n- **Tesouro Prefixado:** Taxa fixa de juros.\n\n### CDB (Certificado de Depósito Bancário)\n\n- **Como escolher:** Verifique a taxa de juros, liquidez e segurança do banco.\n- **Vantagens:** Proteção do FGC até R\$ 250 mil por CPF.\n\n### LCI e LCA\n\n- **Vantagens:** Isenção de imposto de renda e proteção do FGC.\n- **Desvantagens:** Prazos mais longos e menor liquidez.",
+            'ordem' => 2,
+        ]);
+
+        // Módulo 2: Como Calcular Rentabilidade e Riscos
+        Modulo::create([
+            'curso_id' => 5,
+            'titulo' => 'Como Calcular Rentabilidade e Riscos',
+            'conteudo' => "## Como Calcular Rentabilidade e Riscos\n\n### Rentabilidade\n\n- **Fórmula de juros compostos:** VF = VP x (1 + i)^n.\n- **Exemplo:** Investir R\$ 1.000 em um CDB que paga 10% ao ano resulta em R\$ 1.100 após um ano.\n\n### Riscos\n\n- **Risco de crédito:** Possibilidade de o emissor não pagar.\n- **Risco de liquidez:** Dificuldade de resgatar antes do vencimento.\n- **Risco de mercado:** Variações nas taxas de juros.\n\n### Diversificação\n\n- **Distribua seus investimentos** em diferentes tipos de ativos e emissores.",
+            'ordem' => 3,
+        ]);
+
+        // Módulo 3: Estratégias de Diversificação
+        Modulo::create([
+            'curso_id' => 5,
+            'titulo' => 'Estratégias de Diversificação',
+            'conteudo' => "## Estratégias de Diversificação\n\n### O que é Diversificação?\n\n- **Prática de distribuir investimentos** em diferentes ativos para reduzir riscos.\n\n### Como Montar uma Carteira Diversificada\n\n- **Defina seus objetivos:** Metas de curto, médio e longo prazo.\n- **Escolha diferentes tipos de ativos:** Tesouro Direto, CDBs, LCIs e LCAs.\n- **Distribua entre emissores:** Invista em títulos de diferentes bancos.\n\n### Exemplos Práticos\n\n- **Carteira conservadora:** 50% Tesouro Selic, 30% CDBs, 20% LCIs.\n- **Carteira moderada:** 40% Tesouro IPCA+, 30% CDBs, 20% LCAs, 10% fundos de renda fixa.\n- **Carteira arrojada:** 30% Tesouro Prefixado, 30% CDBs, 20% LCIs, 20% fundos imobiliários.",
+            'ordem' => 4,
+        ]);
+
+        // Módulo 4: Conclusão do Curso
+        Modulo::create([
+            'curso_id' => 5,
+            'titulo' => 'Conclusão do Curso',
+            'conteudo' => "## Conclusão do Curso\n\nAo final deste curso, você terá uma base sólida para investir em renda fixa, entendendo os principais tipos de investimentos, como calcular rentabilidade e riscos, e como diversificar sua carteira. Lembre-se de que o conhecimento é a chave para tomar decisões financeiras mais seguras e eficientes.\n\n### Próximos Passos\n\n- Escolha um ou dois investimentos em renda fixa para começar, como Tesouro Direto ou CDB.\n- Use calculadoras financeiras para simular rentabilidades e prazos.\n- Revise sua carteira regularmente e ajuste conforme seus objetivos e perfil de risco.\n\nCom planejamento e disciplina, você pode construir um patrimônio sólido e alcançar suas metas financeiras. Boa sorte nos investimentos! 🚀",
+            'ordem' => 5,
+        ]);
+
+
+        // CURSO Fundamentos de Investimentos ID:06
+        // Módulo 0: Introdução
+        Modulo::create([
+            'curso_id' => 6,
+            'titulo' => 'Introdução',
+            'conteudo' => "## Introdução\n\nEste curso foi criado para ajudar você a entender os conceitos básicos de investimentos, conhecer os principais tipos de aplicações financeiras e aprender como começar a investir, mesmo com pouco dinheiro. Vamos abordar tudo de forma simples e prática, para que você possa dar os primeiros passos no mundo dos investimentos com confiança.",
+            'ordem' => 1,
+        ]);
+
+        // Módulo 1: O que são Investimentos e Por que Investir
+        Modulo::create([
+            'curso_id' => 6,
+            'titulo' => 'O que são Investimentos e Por que Investir',
+            'conteudo' => "## O que são Investimentos e Por que Investir\n\nInvestir é alocar dinheiro em ativos ou projetos com o objetivo de gerar retorno financeiro no futuro. Em outras palavras, é usar seu dinheiro para \"trabalhar\" por você, em vez de deixá-lo parado na conta corrente ou gastá-lo sem propósito.\n\n### Benefícios de Investir\n\n- **Proteção contra a inflação.**\n- **Aumento do patrimônio.**\n- **Garantia de uma vida mais tranquila no futuro.**\n\n### Relação entre Risco e Retorno\n\n- **Investimentos de baixo risco:** Retornos menores (ex: poupança).\n- **Investimentos de alto risco:** Retornos maiores (ex: ações).",
+            'ordem' => 2,
+        ]);
+
+        // Módulo 2: Tipos de Investimentos (Renda Fixa, Renda Variável, etc.)
+        Modulo::create([
+            'curso_id' => 6,
+            'titulo' => 'Tipos de Investimentos (Renda Fixa, Renda Variável, etc.)',
+            'conteudo' => "## Tipos de Investimentos (Renda Fixa, Renda Variável, etc.)\n\nExistem diversas opções de investimentos, e elas podem ser divididas em duas grandes categorias: **renda fixa** e **renda variável**.\n\n### Renda Fixa\n\n- **Tesouro Direto:** Títulos públicos emitidos pelo governo federal.\n- **CDB (Certificado de Depósito Bancário):** Títulos emitidos por bancos.\n- **LCI e LCA:** Títulos isentos de imposto de renda.\n\n### Renda Variável\n\n- **Ações:** Parte do capital de uma empresa.\n- **ETFs:** Fundos que replicam índices do mercado.\n- **Fundos Imobiliários:** Investimentos em imóveis comerciais.\n\n### Outros Investimentos\n\n- **Fundos de Investimento:** Carteiras administradas por gestores.\n- **Criptomoedas:** Moedas digitais como Bitcoin e Ethereum.",
+            'ordem' => 3,
+        ]);
+
+        // Módulo 3: Como Começar a Investir com Pouco Dinheiro
+        Modulo::create([
+            'curso_id' => 6,
+            'titulo' => 'Como Começar a Investir com Pouco Dinheiro',
+            'conteudo' => "## Como Começar a Investir com Pouco Dinheiro\n\nMuitas pessoas acham que precisam de muito dinheiro para começar a investir, mas isso não é verdade. Aqui estão algumas dicas:\n\n### Escolha o Investimento Certo\n\n- **Perfil de investidor:** Conservador, moderado ou arrojado.\n- **Objetivos financeiros:** Curto, médio ou longo prazo.\n\n### Plataformas de Investimento\n\n- **Corretoras digitais:** XP, Rico, Clear, NuInvest.\n- **Valores baixos:** Investir a partir de R\$ 50 ou R\$ 100.\n\n### Dicas para Começar\n\n- **Invista regularmente.**\n- **Diversifique seus investimentos.**\n- **Estude e aprenda continuamente.**",
+            'ordem' => 4,
+        ]);
+
+        // Módulo 4: Conclusão do Curso
+        Modulo::create([
+            'curso_id' => 6,
+            'titulo' => 'Conclusão do Curso',
+            'conteudo' => "## Conclusão do Curso\n\nAo final deste curso, você terá uma base sólida para começar a investir, entendendo os conceitos básicos, os principais tipos de investimentos e como dar os primeiros passos, mesmo com pouco dinheiro. Lembre-se de que investir é um processo contínuo, e o aprendizado nunca para.\n\n### Próximos Passos\n\n- Defina seus objetivos financeiros e descubra seu perfil de investidor.\n- Escolha uma plataforma de investimentos e comece com valores pequenos.\n- Continue estudando e acompanhando o mercado para tomar decisões cada vez mais informadas.\n\nCom paciência, disciplina e conhecimento, você pode transformar seus recursos em um patrimônio sólido e garantir um futuro mais próspero. Boa sorte na sua jornada de investimentos! 🚀",
+            'ordem' => 5,
+        ]);
+
+        // CURSO Gestão de Dívidas ID:07
+        // Módulo 0: Introdução
+        Modulo::create([
+            'curso_id' => 7,
+            'titulo' => 'Introdução',
+            'conteudo' => "## Introdução\n\nEste curso foi desenvolvido para ajudar você a entender como lidar com dívidas de forma eficiente, seja para quitá-las, negociar com credores ou evitar cair em dívidas prejudiciais. Vamos abordar estratégias práticas e conceitos importantes para que você possa retomar o controle das suas finanças.",
+            'ordem' => 1,
+        ]);
+
+        // Módulo 1: Como Sair das Dívidas
+        Modulo::create([
+            'curso_id' => 7,
+            'titulo' => 'Como Sair das Dívidas',
+            'conteudo' => "## Como Sair das Dívidas\n\nO primeiro passo para sair das dívidas é **identificá-las**. Faça uma lista detalhada de todas as suas dívidas, incluindo o valor total, a taxa de juros e o valor mínimo da parcela. Isso ajudará você a ter uma visão clara da sua situação financeira.\n\n### Técnica da Bola de Neve\n\n- **O que é:** Pagar primeiro as dívidas menores, enquanto mantém o pagamento mínimo nas outras.\n- **Benefícios:** Traz motivação ao ver as dívidas sendo eliminadas uma a uma.\n\n### Priorizar Dívidas com Juros Altos\n\n- **Por que:** Dívidas como cartão de crédito ou cheque especial crescem rapidamente devido aos juros elevados.\n- **Estratégia:** Negocie taxas de juros mais baixas com os credores.",
+            'ordem' => 2,
+        ]);
+
+        // Módulo 2: Estratégias para Negociar com Credores
+        Modulo::create([
+            'curso_id' => 7,
+            'titulo' => 'Estratégias para Negociar com Credores',
+            'conteudo' => "## Estratégias para Negociar com Credores\n\nNegociar com credores pode ser uma forma eficaz de reduzir o valor das dívidas ou facilitar o pagamento. O primeiro passo é **entrar em contato com os credores**.\n\n### Técnicas de Negociação\n\n- **Descontos:** Peça descontos para quitar a dívida à vista.\n- **Parcelamento:** Solicite parcelamento com juros reduzidos.\n\n### Opções Adicionais\n\n- **Especialistas em finanças:** Busque ajuda de profissionais.\n- **Órgãos de defesa do consumidor:** Recorra ao Procon ou programas como Serasa Limpa Nome.",
+            'ordem' => 3,
+        ]);
+
+        // Módulo 3: Diferença entre Dívidas Boas e Ruins
+        Modulo::create([
+            'curso_id' => 7,
+            'titulo' => 'Diferença entre Dívidas Boas e Ruins',
+            'conteudo' => "## Diferença entre Dívidas Boas e Ruins\n\nNem todas as dívidas são iguais. Algumas podem ser consideradas **dívidas boas**, pois ajudam a construir um patrimônio ou gerar valor no futuro.\n\n### Exemplos de Dívidas Boas\n\n- **Financiamento de imóveis:** Adquire um bem que tende a valorizar.\n- **Empréstimos para educação ou negócios:** Aumentam sua capacidade de ganho.\n\n### Exemplos de Dívidas Ruins\n\n- **Cartão de crédito:** Juros altos e sem benefícios.\n- **Compras por impulso:** Itens que perdem valor rapidamente.\n\n### Como Evitar Dívidas Ruins\n\n- **Planeje suas compras.**\n- **Mantenha uma reserva de emergência.**",
+            'ordem' => 4,
+        ]);
+
+        // Módulo 4: Conclusão do Curso
+        Modulo::create([
+            'curso_id' => 7,
+            'titulo' => 'Conclusão do Curso',
+            'conteudo' => "## Conclusão do Curso\n\nAo final deste curso, você terá ferramentas e conhecimentos para gerenciar suas dívidas de forma eficiente, seja quitando-as, negociando com credores ou evitando dívidas desnecessárias. Lembre-se de que o controle financeiro é um processo contínuo, e pequenas mudanças de hábito podem fazer uma grande diferença a longo prazo.\n\n### Próximos Passos\n\n- Faça uma lista detalhada de suas dívidas e escolha um método para quitá-las.\n- Entre em contato com seus credores para negociar condições mais favoráveis.\n- Reflita sobre suas decisões financeiras e evite contrair dívidas ruins no futuro.\n\nCom disciplina e planejamento, você pode superar as dívidas e alcançar uma vida financeira mais equilibrada. Boa sorte! 🚀",
+            'ordem' => 5,
+        ]);
+
     }
 }

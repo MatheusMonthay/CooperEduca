@@ -26,11 +26,35 @@ class CursosTableSeeder extends Seeder
             'nome' => 'Planejamento Financeiro para Metas de Curto e Longo Prazo',
             'descricao' => 'Este curso foi desenvolvido para ajudar você a definir metas financeiras, criar estratégias para alcançá-las e se preparar para o futuro, incluindo a aposentadoria',
         ]);
-        
-        /*
+
+        // CURSO Investimentos em Renda Variável ID:04
         Curso::create([
-            'nome' => '',
-            'descricao' => '',
-        ]);*/
+            'nome' => 'Investimentos em Renda Variável',
+            'descricao' => 'Este curso foi desenvolvido para ajudar você a entender os principais investimentos em renda variável',
+        ]);
+
+        // CURSO Investimentos em Renda Fixa ID:05
+        Curso::create([
+            'nome' => 'Investimentos em Renda Fixa',
+            'descricao' => 'Este curso foi criado para ajudar você a entender os principais investimentos em renda fixa',
+        ]);
+
+        // CURSO Investimentos em Renda Fixa ID:05
+        Curso::create([
+            'nome' => 'Investimentos em Renda Fixa',
+            'descricao' => 'Este curso foi criado para ajudar você a entender os principais investimentos em renda fixa',
+        ]);
+
+        // CURSO Fundamentos de Investimentos ID:06
+        Curso::create([
+            'nome' => 'Fundamentos de Investimentos',
+            'descricao' => 'Este curso foi criado para ajudar você a entender os conceitos básicos de investimentos',
+        ]);
+
+        // CURSO Gestão de Dívidas ID:07
+        Curso::create([
+            'nome' => 'Gestão de Dívidas',
+            'descricao' => 'Este curso foi desenvolvido para ajudar você a entender como lidar com dívidas de forma eficiente',
+        ]);
     }
 }
