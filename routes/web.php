@@ -40,7 +40,6 @@ Route::post('/register', [AuthController::class, 'register']);
 // Rota para logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Rota protegida (exemplo)
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware('auth');
+})->middleware('auth')->name('dashboard');
