@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\RankingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +43,16 @@ Route::post('/register', [AuthController::class, 'register']);
 // Rota para logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth')->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware('auth')
+    ->name('dashboard');
+
+// Rotas de Quiz
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cursos/{curso_id}/quiz/{quiz_id}', [QuizController::class, 'show'])->name('quizzes.show');
+    Route::post('/cursos/{curso_id}/quiz/{quiz_id}', [QuizController::class, 'store'])->name('quizzes.store');
+    Route::get('/cursos/{curso_id}/quiz/{quiz_id}/result/{score}', [QuizController::class, 'result'])->name('quizzes.result');
+    
+    // Ranking
+    Route::get('/ranking/semanal', [RankingController::class, 'weekly'])->name('ranking.weekly');
+});

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CursosTableSeeder::class,
             ModulosTableSeeder::class,
+            QuizSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

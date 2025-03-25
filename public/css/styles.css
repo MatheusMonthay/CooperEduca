@@ -332,3 +332,112 @@ footer {
     color: #333;
     font-size: 18px;
 }
+
+/* Estilos para a seção do quiz */
+.quiz-section {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+}
+
+.quiz-section .card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-section .card-header {
+    font-size: 1.25rem;
+}
+
+.quiz-section .alert {
+    margin-bottom: 1.5rem;
+}
+.quiz-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.question-card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #004d26;
+}
+
+.question-card h3 {
+    color: #004d26;
+    margin-bottom: 1rem;
+}
+
+/* Result Styles */
+.quiz-result-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.result-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.result-card .score {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #004d26;
+    margin: 1rem 0;
+}
+
+.result-card .percentage {
+    font-size: 1.5rem;
+    color: #00a65a;
+    margin-bottom: 1.5rem;
+}
+
+.result-card .xp-earned {
+    font-size: 1.2rem;
+    color: #ff851b;
+    margin-bottom: 2rem;
+}
+
+/* Ranking Styles */
+.ranking-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.ranking-list {
+    margin: 2rem 0;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.ranking-item .position {
+    font-weight: bold;
+    color: #004d26;
+    width: 50px;
+}
+
+.ranking-item .user-name {
+    flex-grow: 1;
+}
+
+.ranking-item .user-xp {
+    font-weight: bold;
+    color: #00a65a;
+}
+
