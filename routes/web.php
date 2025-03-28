@@ -61,3 +61,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/sobre', function () {
     return view('sobre');
 })->name('sobre');
+
+Route::prefix('ranking')->group(function () {
+    Route::get('/semanal', [RankingController::class, 'weekly'])->name('ranking.weekly');
+    Route::get('/historico', [RankingController::class, 'history'])->name('ranking.history');
+});
