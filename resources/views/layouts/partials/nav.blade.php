@@ -13,7 +13,7 @@
                     <button type="submit" class="btn btn-outline">Logout</button>
                 </form>
             @else
-                <a href="{{ route('login') }}" class="btn">Entrar</a>
+                <a href="{{ route('login') }}" class="btn ">Entrar</a>
                 <a href="{{ route('register') }}" class="btn btn-outline">Criar Conta</a>
             @endauth
         </div>
