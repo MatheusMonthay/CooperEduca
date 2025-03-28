@@ -56,3 +56,8 @@ Route::middleware(['auth'])->group(function () {
     // Ranking
     Route::get('/ranking/semanal', [RankingController::class, 'weekly'])->name('ranking.weekly');
 });
+
+//Rota sobre
+Route::get('/sobre', function () {
+    return view('sobre');
+})->name('sobre');
