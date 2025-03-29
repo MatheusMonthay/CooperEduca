@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+use function Laravel\Prompts\password;
+
 class AuthController extends Controller
 {
     // Mostrar o formulário de login
@@ -45,22 +47,31 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
-            'cpf' => 'required|string|unique:users|max:14', // CPF com máscara (ex: 123.456.789-00)
-            'telefone' => 'required|string|max:15', // Telefone com máscara (ex: (11) 99999-9999)
+            'cpf' => 'required|string|unique:users|max:14', 
+            'telefone' => 'required|string|max:15', 
             'password' => 'required|string|confirmed',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'cpf' => $request->cpf,
-            'telefone' => $request->telefone,
-            'password' => Hash::make($request->password),
+        $password = $request->password;
+        $password_confirmation = $request->password_confirmation;
+
+        if ($password === $password_confirmation) {
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'cpf' => $request->cpf,
+                'telefone' => $request->telefone,
+                'password' => Hash::make($request->password),
+            ]);
+
+            Auth::login($user);
+
+            return redirect('/dashboard'); // Redirecionar para a página após o registro
+        }
+
+        return back()->withErrors([
+            'password' => 'As senhas não conferem',
         ]);
-
-        Auth::login($user);
-
-        return redirect('/dashboard'); // Redirecionar para a página após o registro
     }
 
     // Logout

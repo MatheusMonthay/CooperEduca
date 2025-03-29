@@ -5,23 +5,24 @@
     <div class="login-container">
         <h1>Login</h1>
         @if ($errors->any())
-            <div class="error-message">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <div class="error-message">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
         @endif
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}" autocomplete="off">
             @csrf
             <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" class="form-control" required>
+                <input type="email" name="email" id="email" class="form-control" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="password">Senha:</label>
-                <input type="password" name="password" id="password" class="form-control" required>
+                <input type="password" name="password" id="password" class="form-control" required
+                    autocomplete="new-password">
             </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
         </form>

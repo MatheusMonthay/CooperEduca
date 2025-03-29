@@ -53,8 +53,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/cursos/{curso_id}/quiz/{quiz_id}', [QuizController::class, 'store'])->name('quizzes.store');
     Route::get('/cursos/{curso_id}/quiz/{quiz_id}/result/{score}', [QuizController::class, 'result'])->name('quizzes.result');
     
-    // Ranking
-    Route::get('/ranking/semanal', [RankingController::class, 'weekly'])->name('ranking.weekly');
 });
 
 //Rota sobre
@@ -62,7 +60,7 @@ Route::get('/sobre', function () {
     return view('sobre');
 })->name('sobre');
 
-Route::prefix('ranking')->group(function () {
+Route::prefix('ranking')->middleware(['auth'])->group(function () {
     Route::get('/semanal', [RankingController::class, 'weekly'])->name('ranking.weekly');
     Route::get('/historico', [RankingController::class, 'history'])->name('ranking.history');
 });
