@@ -17,6 +17,9 @@ class AuthController extends Controller
     // Mostrar o formulário de login
     public function showLoginForm()
     {
+        if (auth()->check()) {
+            return redirect()->route('dashboard'); 
+        }
         return view('auth.login');
     }
 
@@ -41,6 +44,9 @@ class AuthController extends Controller
     // Mostrar o formulário de registro
     public function showRegisterForm()
     {
+        if (auth()->check()) {
+            return redirect()->route('dashboard');
+        }
         return view('auth.register');
     }
 
