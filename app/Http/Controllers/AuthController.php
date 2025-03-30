@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeEmail;
 use App\Models\User;
+use App\Notifications\WelcomeEmailNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 use function Laravel\Prompts\password;
 
@@ -65,6 +68,8 @@ class AuthController extends Controller
             ]);
 
             Auth::login($user);
+            
+            Mail::to($user->email)->send(new WelcomeEmail($user));
 
             return redirect('/dashboard'); // Redirecionar para a página após o registro
         }
