@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WeeklyRankingNotification;
 use App\Models\User;
 use App\Models\WeeklyTop3History;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class RankingController extends Controller
 {
@@ -38,23 +40,32 @@ class RankingController extends Controller
     }
     
     protected function saveTop3History($weekStart, $ranking)
-    {
-        // Verificar se já foi salvo para esta semana
-        $exists = WeeklyTop3History::where('week_start_date', $weekStart->format('Y-m-d'))->exists();
-        
-        if (!$exists && $ranking->count() >= 3) {
-            $top3 = $ranking->take(3)->map(function($user) {
-                return [
-                    'user_id' => $user->id,
-                    'name' => $user->name,
-                    'xp' => $user->xp_records_sum_xp_amount ?? 0
-                ];
-            });
+{
+    // Verificar se já foi salvo para esta semana
+    $exists = WeeklyTop3History::where('week_start_date', $weekStart->format('Y-m-d'))->exists();
+    
+    if (!$exists && $ranking->count() >= 3) {
+        $top3 = $ranking->take(3)->map(function($user, $index) {
+            $position = $index + 1;
             
-            WeeklyTop3History::create([
-                'week_start_date' => $weekStart,
-                'top3_users' => $top3
-            ]);
-        }
+            // Enviar e-mail para o usuário
+            Mail::to($user->email)->send(
+                new WeeklyRankingNotification($user, $position)
+            );
+            
+            return [
+                'user_id' => $user->id,
+                'name' => $user->name,
+                'xp' => $user->xp_records_sum_xp_amount ?? 0,
+                'position' => $position,
+                'prize_claimed' => false // Marcar como não reivindicado ainda
+            ];
+        });
+        
+        WeeklyTop3History::create([
+            'week_start_date' => $weekStart,
+            'top3_users' => $top3
+        ]);
     }
+}
 }

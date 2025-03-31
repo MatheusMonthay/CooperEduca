@@ -24,6 +24,8 @@ class User extends Authenticatable
         'cpf',
         'telefone',
         'total_xp',
+        'terms_accepted',
+        'terms_accepted_at',
     ];
 
     /**

@@ -58,7 +58,13 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'cpf' => 'required|string|unique:users|max:14', 
             'telefone' => 'required|string|max:15', 
-            'password' => 'required|string|confirmed',
+            'password' => 'required|string|min:8',
+            'password_confirmation' => 'required|same:password',
+            'terms_accepted' => 'required|accepted',
+        ], [
+            'terms_accepted.required' => 'Você deve aceitar os termos de uso para se registrar.',
+            'terms_accepted.accepted' => 'Você deve aceitar os termos de uso para se registrar.',
+            'password_confirmation.same' => 'A confirmação de senha não corresponde.',
         ]);
 
         $password = $request->password;
