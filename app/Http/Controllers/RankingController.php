@@ -11,6 +11,26 @@ use Illuminate\Support\Facades\Mail;
 
 class RankingController extends Controller
 {
+
+    public function testRankingEmail(Request $request)
+{
+    $request->validate([
+        'position' => 'required|integer|between:1,3'
+    ]);
+
+    $user = $request->user();
+    $position = $request->position;
+
+    try {
+        Mail::to($user->email)->send(
+            new WeeklyRankingNotification($user, $position)
+        );
+        
+        return back()->with('success', 'E-mail de teste (como '.$position.'º lugar) enviado com sucesso! Verifique sua caixa de entrada.');
+    } catch (\Exception $e) {
+        return back()->with('error', 'Erro ao enviar e-mail: '.$e->getMessage());
+    }
+}
     public function weekly()
     {
         $startOfWeek = Carbon::now()->startOfWeek();

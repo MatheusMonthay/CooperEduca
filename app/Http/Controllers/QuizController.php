@@ -53,6 +53,10 @@ class QuizController extends Controller
         }
         
         $xpEarned = $score * $quiz->xp_per_question;
+
+        if ($score === $totalQuestions) {
+            $xpEarned *= 2;
+        }
         
         // Registrar a tentativa do quiz
         UserQuizAttempt::create([

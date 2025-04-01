@@ -64,3 +64,6 @@ Route::prefix('ranking')->middleware(['auth'])->group(function () {
     Route::get('/semanal', [RankingController::class, 'weekly'])->name('ranking.weekly');
     Route::get('/historico', [RankingController::class, 'history'])->name('ranking.history');
 });
+
+Route::post('/test-ranking-email', [RankingController::class, 'testRankingEmail'])
+     ->name('test.ranking.email');
