@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index($tab = 'progress')
     {
         $user = Auth::user();
 
@@ -59,6 +59,6 @@ class DashboardController extends Controller
             return ($totalModules > 0 && $completedModules >= $totalModules) && $quizCompleted;
         });
 
-        return view('dashboard', compact('inProgress', 'completed'));
+        return view('dashboard', compact('inProgress', 'completed', 'tab'));
     }
 }

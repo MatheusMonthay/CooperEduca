@@ -43,8 +43,8 @@ Route::post('/register', [AuthController::class, 'register']);
 // Rota para logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware('auth')
+Route::get('/dashboard/{tab?}', [DashboardController::class, 'index'])
+    ->middleware(['auth'])
     ->name('dashboard');
 
 // Rotas de Quiz
@@ -65,5 +65,3 @@ Route::prefix('ranking')->middleware(['auth'])->group(function () {
     Route::get('/historico', [RankingController::class, 'history'])->name('ranking.history');
 });
 
-Route::post('/test-ranking-email', [RankingController::class, 'testRankingEmail'])
-     ->name('test.ranking.email');
