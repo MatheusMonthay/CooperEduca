@@ -39,11 +39,6 @@ class CursosTableSeeder extends Seeder
             'descricao' => 'Este curso foi criado para ajudar você a entender os principais investimentos em renda fixa',
         ]);
 
-        // CURSO Investimentos em Renda Fixa ID:05
-        Curso::create([
-            'nome' => 'Investimentos em Renda Fixa',
-            'descricao' => 'Este curso foi criado para ajudar você a entender os principais investimentos em renda fixa',
-        ]);
 
         // CURSO Fundamentos de Investimentos ID:06
         Curso::create([

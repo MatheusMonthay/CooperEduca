@@ -24,11 +24,6 @@
             @endforeach
         </div>
 
-        <div class="ranking-footer">
-            <a href="{{ route('ranking.history') }}" class="btn btn-history">
-                <i class="fas fa-history"></i> Ver Histórico
-            </a>
-        </div>
     </div>
 </div>
 @endsection

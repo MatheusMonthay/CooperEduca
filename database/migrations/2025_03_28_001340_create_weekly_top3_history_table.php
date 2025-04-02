@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('weekly_top3_history', function (Blueprint $table) {
             $table->id();
             $table->date('week_start_date')->unique();
-            $table->json('top3_users'); // Armazenará IDs, nomes e XP dos top 3
+            $table->json('top3_users'); 
             $table->timestamps();
         });
     }

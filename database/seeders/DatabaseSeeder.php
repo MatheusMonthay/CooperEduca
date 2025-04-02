@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CursosTableSeeder::class,
             ModulosTableSeeder::class,
             QuizSeeder::class,
+            DemoDataSeeder::class, 
         ]);
         // \App\Models\User::factory(10)->create();
 

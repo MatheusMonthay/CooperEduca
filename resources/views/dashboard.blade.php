@@ -43,7 +43,37 @@
                     @foreach($inProgress as $course)
                     <div class="col-md-6 col-lg-4">
                         <div class="card h-100 curso-card shadow-sm border-0 p-3">
-                            <!-- ... (conteúdo do card em andamento) ... -->
+                            <div class="card-img-top bg-light mb-3" style="height: 120px; background-color: #e9f5eb;">
+                                <div class="d-flex justify-content-center align-items-center h-100">
+                                    <i class="fas fa-book-open fa-3x text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <h5 class="card-title mb-3">{{ $course['curso']->nome }}</h5>
+                                
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="progress flex-grow-1 me-2" style="height: 8px;">
+                                        <div class="progress-bar bg-success" 
+                                             role="progressbar" 
+                                             style="width: {{ $course['progress'] }}%">
+                                        </div>
+                                    </div>
+                                    <small class="text-muted">{{ $course['progress'] }}%</small>
+                                </div>
+                                
+                                @if($course['next_module'])
+                                    <p class="small text-muted mb-3">
+                                        <i class="fas fa-arrow-right me-1"></i>
+                                        Próximo: {{ $course['next_module']->titulo }}
+                                    </p>
+                                @endif
+                            </div>
+                            <div class="card-footer bg-white border-0 px-0 pb-0 pt-3">
+                                <a href="{{ $course['next_module'] ? route('cursos.show', ['curso_id' => $course['curso']->id, 'modulo_id' => $course['next_module']->id]) : route('cursos.show', $course['curso']->id) }}" 
+                                   class="btn btn-primary w-100">
+                                    Continuar
+                                </a>
+                            </div>
                         </div>
                     </div>
                     @endforeach
