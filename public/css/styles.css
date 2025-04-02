@@ -6,7 +6,8 @@
 }
 
 /* Define altura total da página e fonte padrão */
-html, body {
+html,
+body {
     height: 100%;
     font-family: Arial, sans-serif;
     background-color: #eef5f0;
@@ -19,7 +20,8 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    flex: 1; /* Faz o container ocupar o espaço restante */
+    flex: 1;
+    /* Faz o container ocupar o espaço restante */
 }
 
 /* Estilização do cabeçalho */
@@ -115,12 +117,14 @@ footer {
 /* Layout para cursos e módulos */
 .row {
     display: flex;
-    gap: 20px; /* Espaçamento entre as colunas */
+    gap: 20px;
+    /* Espaçamento entre as colunas */
 }
 
 /* Coluna esquerda (lista de módulos) */
 .col-md-3 {
-    flex: 0 0 250px; /* Largura fixa de 250px */
+    flex: 0 0 250px;
+    /* Largura fixa de 250px */
     background-color: #f8f9fa;
     padding: 20px;
     border-right: 1px solid #ddd;
@@ -165,7 +169,8 @@ footer {
 
 /* Coluna direita (conteúdo do módulo) */
 .col-md-9 {
-    flex: 1; /* Ocupa o espaço restante */
+    flex: 1;
+    /* Ocupa o espaço restante */
     padding: 20px;
 }
 
@@ -352,6 +357,7 @@ footer {
 .quiz-section .alert {
     margin-bottom: 1.5rem;
 }
+
 .quiz-container {
     background-color: #fff;
     padding: 2rem;
@@ -495,7 +501,7 @@ footer {
     flex: 1;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .mission-image img {
@@ -529,7 +535,7 @@ footer {
     background: #f8f9fa;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: transform 0.3s ease;
     border-top: 3px solid #00a65a;
@@ -604,7 +610,7 @@ footer {
 }
 
 .btn-outline:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
 
@@ -613,25 +619,25 @@ footer {
     .about-mission .container {
         flex-direction: column;
     }
-    
+
     .mission-image {
         order: -1;
         margin-bottom: 2rem;
     }
-    
+
     .join-cta {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .about-hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .about-hero .subtitle {
         font-size: 1.2rem;
     }
-    
+
     .mission-content h2,
     .about-values h2,
     .about-join h2 {
@@ -722,21 +728,23 @@ footer {
     .simple-hero {
         padding: 4rem 0 3rem;
     }
-    
+
     .simple-hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .value-cards {
         grid-template-columns: 1fr;
     }
 }
+
 /* Estilos do Ranking */
-.ranking-card, .history-card {
+.ranking-card,
+.history-card {
     background: white;
     border-radius: 10px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -745,14 +753,16 @@ footer {
     margin: 0 auto;
 }
 
-.ranking-header, .history-header {
+.ranking-header,
+.history-header {
     text-align: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #eee;
 }
 
-.ranking-header h1, .history-header h1 {
+.ranking-header h1,
+.history-header h1 {
     color: #004d26;
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -824,14 +834,16 @@ footer {
     text-align: right;
 }
 
-.ranking-footer, .history-footer {
+.ranking-footer,
+.history-footer {
     text-align: center;
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #eee;
 }
 
-.btn-history, .btn-back {
+.btn-history,
+.btn-back {
     background-color: #004d26;
     color: white;
     padding: 0.8rem 2rem;
@@ -840,7 +852,8 @@ footer {
     transition: all 0.3s ease;
 }
 
-.btn-history:hover, .btn-back:hover {
+.btn-history:hover,
+.btn-back:hover {
     background-color: #003d1f;
     transform: translateY(-2px);
 }
@@ -883,21 +896,24 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .ranking-item, .top3-item {
+
+    .ranking-item,
+    .top3-item {
         flex-direction: column;
         align-items: flex-start;
         padding: 1.5rem;
     }
-    
+
     .user-info {
         margin: 0.5rem 0;
     }
-    
+
     .user-xp {
         text-align: left;
         margin-top: 0.5rem;
     }
 }
+
 /* Estilos para os termos */
 .terms-content {
     max-height: 300px;
@@ -946,12 +962,74 @@ footer {
         font-size: 13px;
         padding: 10px;
     }
-    
+
     .terms-content h4 {
         font-size: 15px;
     }
-    
+
     .terms-content h5 {
         font-size: 14px;
     }
+}
+/* Dashboard Styles */
+.dashboard-container {
+    min-height: calc(100vh - 120px);
+}
+
+.curso-card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+}
+
+.nav-tabs .nav-link.active {
+    color: #004d26;
+    background-color: transparent;
+    border-bottom: 3px solid #004d26;
+}
+
+.empty-state {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.empty-state-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.bg-light-primary {
+    background-color: rgba(0, 166, 90, 0.1);
+}
+
+.bg-light-success {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.card-img-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

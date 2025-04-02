@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quiz;
+use App\Models\UserCourseProgress;
 use App\Models\UserQuizAttempt;
 use App\Models\XpRecord;
 use Illuminate\Http\Request;
@@ -13,12 +14,12 @@ class QuizController extends Controller
     public function show($curso_id, $quiz_id)
     {
         $quiz = Quiz::with('questions')->where('curso_id', $curso_id)->findOrFail($quiz_id);
-        
+
         // Verifica se o usuário já completou este quiz
         $hasAttempted = UserQuizAttempt::where('user_id', Auth::id())
             ->where('quiz_id', $quiz_id)
             ->exists();
-            
+
         if ($hasAttempted) {
             return redirect()->route('cursos.show', $curso_id)
                 ->with('error', 'Você já completou este quiz.');
@@ -31,12 +32,12 @@ class QuizController extends Controller
     {
         $quiz = Quiz::with('questions')->findOrFail($quiz_id);
         $user = Auth::user();
-        
+
         // Verifica se o usuário já completou este quiz
         $hasAttempted = UserQuizAttempt::where('user_id', $user->id)
             ->where('quiz_id', $quiz_id)
             ->exists();
-            
+
         if ($hasAttempted) {
             return redirect()->route('cursos.show', $curso_id)
                 ->with('error', 'Você já completou este quiz.');
@@ -44,20 +45,20 @@ class QuizController extends Controller
 
         $score = 0;
         $totalQuestions = $quiz->questions->count();
-        
+
         foreach ($quiz->questions as $question) {
-            $userAnswer = $request->input('question_'.$question->id);
+            $userAnswer = $request->input('question_' . $question->id);
             if ($userAnswer === $question->correct_option) {
                 $score++;
             }
         }
-        
+
         $xpEarned = $score * $quiz->xp_per_question;
 
         if ($score === $totalQuestions) {
             $xpEarned *= 2;
         }
-        
+
         // Registrar a tentativa do quiz
         UserQuizAttempt::create([
             'user_id' => $user->id,
@@ -66,7 +67,7 @@ class QuizController extends Controller
             'total_xp_earned' => $xpEarned,
             'completed_at' => now(),
         ]);
-        
+
         // Adicionar XP ao usuário
         XpRecord::create([
             'user_id' => $user->id,
@@ -75,11 +76,23 @@ class QuizController extends Controller
             'sourceable_id' => $quiz_id,
             'sourceable_type' => Quiz::class,
         ]);
-        
+
         // Atualizar XP total do usuário
         $user->total_xp += $xpEarned;
         $user->save();
-        
+
+        UserCourseProgress::updateOrCreate(
+            [
+                'user_id' => $user->id,
+                'curso_id' => $curso_id,
+                'modulo_id' => null
+            ],
+            [
+                'completed' => true,
+                'completed_at' => now()
+            ]
+        );
+
         return redirect()->route('quizzes.result', [$curso_id, $quiz_id, $score]);
     }
 
@@ -89,7 +102,7 @@ class QuizController extends Controller
         $totalQuestions = $quiz->questions->count();
         $percentage = round(($score / $totalQuestions) * 100);
         $xpEarned = $score * $quiz->xp_per_question;
-        
+
         return view('quizzes.result', compact('curso_id', 'quiz', 'score', 'totalQuestions', 'percentage', 'xpEarned'));
     }
 }

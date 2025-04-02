@@ -50,9 +50,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserQuizAttempt::class);
     }
-    
+
     public function xpRecords()
     {
         return $this->hasMany(XpRecord::class);
-    }    
+    }
+
+    public function courseProgress()
+    {
+        return $this->hasMany(UserCourseProgress::class);
+    }
 }
