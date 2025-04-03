@@ -20,7 +20,13 @@
     $(function() {
         $("#cpf").mask("000.000.000-00")
         $("#telefone").mask("(00)00000-0000")
-    })
+        
+        // Menu mobile
+        $('.menu-btn').click(function() {
+            $('.nav-links').toggleClass('active');
+            $(this).toggleClass('open');
+        });
+    });
     </script>
 </head>
 
